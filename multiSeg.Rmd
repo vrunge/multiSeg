@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
   word_document: default
 ---
 
@@ -20,6 +20,11 @@ output:
 
 ## Introduction
 
+Installation of the package througth its github repository
+```{r}
+devtools::install_github("vrunge/multiSeg", force = TRUE)
+```
+
 Loading the package 
 ```{r}
 library(multiSeg)
@@ -36,6 +41,7 @@ changes <- c(0.3,0.6,1)
 Data simulation
 ```{r}
 data <- dataG(n,means,changes, var)
+head(data)
 ```
 
 Segmentation algorithm
@@ -50,8 +56,6 @@ pruning(res)
 segmentation(file,res)
 changepoints(res)
 ```
-
-
 
 <a id="pr"></a>
 
