@@ -1,0 +1,17 @@
+Package: multiSeg
+Type: Package
+Title: Multidimensional changepoint detection with dynamic programming
+Version: 0.1
+Date: 2017-11-21
+Authors@R: c(person("Vincent Runge", email = "runge.vincent@gmail.com", role = c("aut","cre")))
+Author: Vincent Runge
+Maintainer: Vincent Runge<runge.vincent@gmail.com>
+Description: Experimental package to test different pruning methods in the multidimensional changepoint problem. The core function of the package are implemented in C++.
+License: GPL-2
+Imports:
+    Rcpp (>= 0.12.3),
+    graphics,
+	utils,
+	stats
+LinkingTo: Rcpp
+RoxygenNote: 6.0.1

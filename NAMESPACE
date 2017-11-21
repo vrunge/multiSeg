@@ -1,0 +1,9 @@
+useDynLib(multiSeg)
+
+export(multiSeg, pruning,dataG, segmentation, changepoints)
+
+import(graphics, Rcpp)
+
+importFrom("stats", "rnorm")
+importFrom("utils", "read.table", "write.table")
+
