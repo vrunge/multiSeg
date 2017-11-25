@@ -12,7 +12,7 @@ class Omega
     public:
         Omega(double b);
 
-        void pelt(Data data, int type);
+        void pelt(Data data, int type, int show);
         void addPoint(Point pt, double& mb, int p, int t);
         void pruning(int pruntype);
 

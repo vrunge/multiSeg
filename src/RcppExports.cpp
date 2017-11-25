@@ -6,21 +6,22 @@
 using namespace Rcpp;
 
 // transfert
-List transfert(std::string file, double beta, int type);
-RcppExport SEXP _multiSeg_transfert(SEXP fileSEXP, SEXP betaSEXP, SEXP typeSEXP) {
+List transfert(std::string file, double beta, int type, int show);
+RcppExport SEXP _multiSeg_transfert(SEXP fileSEXP, SEXP betaSEXP, SEXP typeSEXP, SEXP showSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type file(fileSEXP);
     Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
     Rcpp::traits::input_parameter< int >::type type(typeSEXP);
-    rcpp_result_gen = Rcpp::wrap(transfert(file, beta, type));
+    Rcpp::traits::input_parameter< int >::type show(showSEXP);
+    rcpp_result_gen = Rcpp::wrap(transfert(file, beta, type, show));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_multiSeg_transfert", (DL_FUNC) &_multiSeg_transfert, 3},
+    {"_multiSeg_transfert", (DL_FUNC) &_multiSeg_transfert, 4},
     {NULL, NULL, 0}
 };
 

@@ -14,7 +14,7 @@ Omega::Omega(double b) : beta(b), active(NULL){}
 //####### PELT #######// //####### PELT #######// //####### PELT #######//
 //####### PELT #######// //####### PELT #######// //####### PELT #######//
 
-void Omega::pelt(Data data, int type)
+void Omega::pelt(Data data, int type, int show)
 {
     ///data downloading
     int p = data.getp();
@@ -25,7 +25,9 @@ void Omega::pelt(Data data, int type)
 
     for (int t = 0 ; t < n ; t++)
     {
+		if(show != 0){if(t%show == 0){std::cout<<"addPoint : "<<t<<endl;}}
         addPoint(points[t],mb,p,t);
+
         pruning(type);
         number();
     }
@@ -36,8 +38,6 @@ void Omega::pelt(Data data, int type)
 
 void Omega::addPoint(Point pt, double& mb, int p, int t)
 {
-  std::cout<<"addPoint : "<<t<<endl;
-
     ///1 ### LOCAL ### Creating a new ActiveSet with label t
     element* newElt = new element();
         newElt->piece = ActiveSet(mb,p,t);
