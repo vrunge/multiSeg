@@ -24,3 +24,4 @@ file = paste(getwd(),"/dataG.txt",sep = "")
 res <- multiSeg(file,4*2*log(n),1)
 segmentation(file,res)
 }
+

@@ -81,7 +81,7 @@ segmentation <- function(file, res){
   while(chgpt[1] != 0){chgpt = c(res$chgpt[chgpt[1]-1],chgpt)}
 
   chgpt <- c(chgpt,n)
-  print(chgpt)
+
   par(mfrow=c(p,1),mai=c(0.3,0.4,0.1,0.4))
 
   data <- read.table(file)

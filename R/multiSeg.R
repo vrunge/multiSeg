@@ -5,6 +5,7 @@
 #' @param file the complete path + file name of the data to use
 #' @param beta the penalty coefficient
 #' @param type an integer equal to 0,1,2 or 3. Complexity of the pruning. (see function pruning). If type = i, we use pruning method from 1 to i
+#' @param show an integer. Following the actual iteration during computation. Display every 'show' iteration.
 #' @return A multiSeg object = (chgpt, means, nb, type, delay).
 #' With n the number of observations, all these elements are vector of size n except means which is a matrix of size nxp.
 #' 'Chgpt' is a vector of last changepoint at each position.
@@ -21,9 +22,9 @@
 #' file = paste(getwd(),"/dataG.txt",sep = "")
 #' multiSeg(file,4*2*log(n),1)
 
-multiSeg <- function(file, beta, type = 3){
+multiSeg <- function(file, beta, type = 3, show = 0){
 
-  res <- transfert(file, beta, type)
+  res <- transfert(file, beta, type, show)
   res$means <- do.call(rbind, res$means)
 
   response <- list(chgpt = res$lastChangePoint, means = res$means, nb = res$nbSet, type = res$pruningType, delay = res$pruningDelay)

@@ -32,3 +32,4 @@ res <- multiSeg(file,4*2*log(n),1)
 pruning(res)
 res$type
 }
+

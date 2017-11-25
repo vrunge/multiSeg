@@ -4,7 +4,7 @@
 \alias{multiSeg}
 \title{Multidimensional multiple changepoint algorithm with pruning}
 \usage{
-multiSeg(file, beta, type = 3)
+multiSeg(file, beta, type = 3, show = 0)
 }
 \arguments{
 \item{file}{the complete path + file name of the data to use}
@@ -12,6 +12,8 @@ multiSeg(file, beta, type = 3)
 \item{beta}{the penalty coefficient}
 
 \item{type}{an integer equal to 0,1,2 or 3. Complexity of the pruning. (see function pruning). If type = i, we use pruning method from 1 to i}
+
+\item{show}{an integer. Following the actual iteration during computation. Display every 'show' iteration.}
 }
 \value{
 A multiSeg object = (chgpt, means, nb, type, delay).
@@ -34,3 +36,4 @@ data <- dataG(n,means,changes, var)
 file = paste(getwd(),"/dataG.txt",sep = "")
 multiSeg(file,4*2*log(n),1)
 }
+

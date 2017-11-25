@@ -25,3 +25,4 @@ Simulating Multidimensional Gaussian Data with a model of segmentation, that is 
 data <- dataG(500, matrix(c(0,1,2,1,0,1,2,2,0,0,1,1),3,4),c(0.3,0.6,1))
 head(data)
 }
+
