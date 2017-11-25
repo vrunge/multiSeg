@@ -25,7 +25,7 @@ void Omega::pelt(Data data, int type, int show)
 
     for (int t = 0 ; t < n ; t++)
     {
-		if(show != 0){if(t%show == 0){std::cout<<"addPoint : "<<t<<endl;}}
+		if(show != 0){if(div(t,show).rem == 0){std::cout<<"addPoint : "<<t<<endl;}}
         addPoint(points[t],mb,p,t);
 
         pruning(type);
