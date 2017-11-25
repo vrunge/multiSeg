@@ -36,4 +36,3 @@ data <- dataG(n,means,changes, var)
 file = paste(getwd(),"/dataG.txt",sep = "")
 multiSeg(file,4*2*log(n),1)
 }
-

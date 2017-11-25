@@ -27,4 +27,3 @@ changepoints(res)
 
 
 }
-
